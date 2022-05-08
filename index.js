@@ -19,6 +19,28 @@ newItem = (source, position, left, bottom) => {
   });
 };
 
+// This loop will render the 100 x 100 grass image onto the background
+let leftPos = 0;
+let bottomPos = 0;
+
+for (let j = 100; j < window.innerHeight - 200; j += 100) {
+  for (let i = 100; i < window.innerWidth; i += 100) {
+    newImage("assets/grass.png", "fixed", leftPos + "px", bottomPos + "px");
+    leftPos += 100;
+  }
+  bottomPos += 100;
+  leftPos = 0;
+}
+// This loop will render the 100 x 100 sky image onto the background.
+for (let j = 100; j < window.innerHeight - 400; j += 100) {
+  for (let i = 100; i < window.innerWidth; i += 100) {
+    newImage("assets/sky.png", "fixed", leftPos + "px", bottomPos + "px");
+    leftPos += 100;
+  }
+  bottomPos += 100;
+  leftPos = 0;
+}
+
 // Creating Images
 newImage("assets/green-character.gif", "fixed", "100px", "100px");
 newImage("assets/pine-tree.png", "fixed", "450px", "200px");
